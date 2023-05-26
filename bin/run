@@ -1,7 +1,4 @@
-#!/usr/bin/env ruby 
-
-require_relative '../lib/garden.rb'
-require_relative '../lib/plant.rb'
+require_relative '../config/environment'
 
 lawn = Garden.new(name: 'Front Lawn')
 
@@ -11,4 +8,8 @@ basil.garden = lawn
 cucumber = Plant.new(name: 'Cucumber')
 cucumber.garden = lawn
 
-p lawn.plants
+puts "Garden: #{lawn.name}"
+puts "Plants in the garden:"
+lawn.plants.each do |plant|
+  puts " - #{plant.name}"
+end
